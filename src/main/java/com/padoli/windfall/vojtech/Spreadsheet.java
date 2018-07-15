@@ -53,7 +53,7 @@ public class Spreadsheet {
 		// make it 0-based
 		int row = Integer.valueOf(name.substring(1)) - 1;
 
-		if (col < 'A' || col > 'Z' || row < 0) {
+		if (col < 'A' || col > 'Z' || row < 0 || row >= this.getHeight() || col - 'A' > this.getWidth()) {
 
 			throw new SpreadSheetRuntimeException("Invalid cell address! > " + name);
 		}

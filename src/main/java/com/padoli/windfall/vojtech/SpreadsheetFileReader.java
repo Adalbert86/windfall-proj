@@ -43,6 +43,10 @@ public class SpreadsheetFileReader {
 	private Cell[] parseInputLineToCells(String line, int row) {
 
 		String words[] = line.split(",");
+
+		if (words.length < 1 || words.length > 26 )
+			throw new SpreadSheetRuntimeException("Unsupported number of columns, maximum is 26");
+
 		Cell[] cells = new Cell[words.length];
 
 		for (char ch = 'A'; ch < 'A' + words.length; ch++) {

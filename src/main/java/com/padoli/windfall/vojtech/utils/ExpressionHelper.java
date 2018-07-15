@@ -77,7 +77,7 @@ public class ExpressionHelper {
 
 				StringBuffer sb = new StringBuffer();
 
-				while (i < chars.length && isAlphaNumeric(chars[i]))
+				while (i < chars.length && (isAlphaNumeric(chars[i]) || chars[i] == '.' ))
 					sb.append(chars[i++]);
 
 				String alnumtoken = sb.toString();
